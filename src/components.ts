@@ -19,3 +19,5 @@ export { SiteBigTitle } from "./site-big-title";
 export { SiteGraphDiff } from "./site-graph-diff";
 export { SiteCategories } from "./site-category";
 export { SiteGradient } from "./site-gradient";
+export { SiteAvatar } from "./site-avatar";
+export { SiteSocials } from "./site-socials";

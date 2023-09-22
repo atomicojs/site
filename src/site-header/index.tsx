@@ -68,6 +68,7 @@ siteHeader.styles = [
             display: flex;
             align-items: center;
             justify-content: end;
+            gap: var(--size-3);
         }
         @media (max-width: 768px) {
             .layout {

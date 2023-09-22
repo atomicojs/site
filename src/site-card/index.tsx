@@ -1,14 +1,38 @@
-import { c, css, Props } from "atomico";
+import { useSlot } from "@atomico/hooks/use-slot";
+import { Props, c, css, useRef } from "atomico";
 import { tokens } from "../site-tokens";
+import { serialize } from "atomico/utils";
 function siteCard({ dotColor }: Props<typeof siteCard>) {
+    const refMedia = useRef();
+    const refContent = useRef();
+    const refFooter = useRef();
+    const slotMedia = useSlot(refMedia);
+    const slotContent = useSlot(
+        refContent,
+        (element) => element instanceof HTMLElement
+    );
+    const slotFooter = useSlot(refFooter);
     return (
-        <host shadowDom>
+        <host
+            shadowDom
+            layout={serialize(
+                slotMedia.length && "media",
+                slotContent.length && "content",
+                slotFooter.length && "footer"
+            )}
+        >
             <div class="dot dot-circle"></div>
             <div class="dot dot-gradient"></div>
-            <div class="content">
-                <slot></slot>
+            <div class="media">
+                <slot name="media" ref={refMedia} />
             </div>
-            <style>{`:host{--dot-bgcolor:${dotColor}}`}</style>
+            <div class="content">
+                <slot ref={refContent}></slot>
+            </div>
+            <div class="footer">
+                <slot name="footer" ref={refFooter}></slot>
+            </div>
+            <style>{`:host{--card-dot-bgcolor:${dotColor}}`}</style>
         </host>
     );
 }
@@ -23,30 +47,38 @@ siteCard.styles = [
     tokens,
     css`
         :host {
-            --gap: var(--size-4);
-            --padding: var(--size-5);
-            --radius: var(--size-2);
-            --dot-size: var(--size-2);
-            --dot-transition: 1s ease all;
-
-            background: var(--color-card-background);
-            border: 1px solid var(--color-card-border);
-            box-sizing: border-box;
-            border-radius: var(--radius);
+            background: var(--color-card-container);
+            border: var(--card-border);
+            border-radius: var(--card-border-radius);
             position: relative;
-            display: block;
+            display: grid;
+            gap: var(--card-gap);
+            backdrop-filter: blur(10px);
+            --display-media: none;
+            --display-content: none;
+            --display-footer: none;
+        }
+        :host([layout*="media"]) {
+            --display-media: block;
+        }
+        :host([layout*="content"]) {
+            --display-content: grid;
+        }
+        :host([layout*="footer"]) {
+            --display-footer: flex;
         }
         :host([dot-color]) .dot {
-            width: var(--dot-size);
-            height: var(--dot-size);
-            background: var(--dot-bgcolor);
-            transition: var(--dot-transition);
+            width: var(--card-dot-size);
+            height: var(--card-dot-size);
+            background: var(--card-dot-bgcolor);
+            transition: var(--card-dot-transition);
             position: absolute;
         }
         :host([dot-color]) .dot-circle {
             top: 20px;
             right: 20px;
             border-radius: 100%;
+            z-index: 2;
         }
         :host([dot-color]) .dot-gradient {
             width: 100%;
@@ -54,10 +86,10 @@ siteCard.styles = [
             top: 0px;
             left: 0px;
             opacity: 0;
-            transition: var(--dot-transition) 0.25s;
+            transition: var(--card-dot-transition) 0.25s;
             background: radial-gradient(
                 circle at 100% -50%,
-                var(--dot-bgcolor),
+                var(--card-dot-bgcolor),
                 transparent
             );
         }
@@ -66,18 +98,39 @@ siteCard.styles = [
             opacity: 0.25;
         }
         :host([dot-color]:hover) .dot {
-            box-shadow: 0px 0px 42px var(--dot-bgcolor);
+            box-shadow: 0px 0px 42px var(--card-dot-bgcolor);
         }
         :host([overflow]) {
             overflow: hidden;
         }
-        :host([padding]) {
-            padding: var(--padding);
+        ::slotted([slot="media"]) {
+            width: 100%;
+            object-fit: cover;
+            display: block;
+            border: none;
+        }
+        .media {
+            display: var(--display-media);
+            overflow: hidden;
+            margin: var(--card-media-space);
+            border-radius: calc(
+                var(--card-border-radius) - var(--card-media-space)
+            );
+            position: relative;
         }
         .content {
-            display: grid;
+            display: var(--display-content);
             position: relative;
-            gap: var(--gap);
+            gap: var(--card-gap);
+            padding: var(--card-content-space);
+        }
+        .footer {
+            display: var(--display-footer);
+            justify-content: space-between;
+            align-items: center;
+            border-top: var(--card-border);
+            padding: var(--card-footer-space);
+            position: relative;
         }
     `,
 ];

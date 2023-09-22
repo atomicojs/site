@@ -33,22 +33,13 @@ import {
     SiteSection,
     SiteText,
     SiteTitle,
-    SiteGradient,
+    SiteAvatar,
+    SiteSocials,
     tokens,
 } from "./components";
 function site() {
     return (
         <host shadowDom>
-            <SiteSection style="height: 50vh">
-                <SiteGradient slot="background" />
-                <SiteTitle full-width>
-                    <h1>¿Por que sucede?</h1>
-                </SiteTitle>
-                <SiteText slot="">
-                    Create interfaces with code
-                    <br /> simple, fast and light
-                </SiteText>
-            </SiteSection>
             <SiteHeader>
                 <img src={imgLogo} slot="logo" />
                 <SiteLink
@@ -94,6 +85,13 @@ function site() {
                         </div>
                     </div>
                 </SiteMenu>
+                <SiteSocials
+                    twitter="atomicojs"
+                    github="atomicojs"
+                    discord="atomicojs"
+                    youtube="atomicojs"
+                    slot="action"
+                />
             </SiteHeader>
             <SiteIsotype>
                 <SiteGrid gap={3} centered>
@@ -192,11 +190,7 @@ function site() {
                     sunt magna
                 </SiteText>
                 <img slot="right" src={imgAtom} />
-                <SiteCategories
-                    category="*"
-                    slot="footer"
-                    columns="1, 2 768px, 3 980px"
-                >
+                <SiteCategories category="*" columns="1, 2 768px, 3 980px">
                     <SiteLink slot="category" data-category="*" dot="#FFE600">
                         All
                     </SiteLink>
@@ -214,24 +208,67 @@ function site() {
                     >
                         Category 2
                     </SiteLink>
-                    <a
-                        href="upper.cl"
-                        target="_blank"
-                        data-category="category-1"
-                    >
-                        <SiteCard padding overflow dotColor="#FFE600">
-                            <SiteText color="subtitle">
-                                <h4>@atomico/exports</h4>
-                            </SiteText>
-                            <SiteText>
-                                <small>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit.
-                                </small>
-                            </SiteText>
-                        </SiteCard>
-                    </a>
 
+                    <SiteCard padding overflow dotColor="#FFE600">
+                        <img
+                            slot="media"
+                            src="https://cdn.dribbble.com/userupload/10211211/file/original-bc768aed301f6f0f9a6d8673dadd4da8.png?resize=1024x768"
+                        />
+                        <SiteText color="subtitle">
+                            <h4>@atomico/exports</h4>
+                        </SiteText>
+                        <SiteText>
+                            <small>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit.
+                            </small>
+                        </SiteText>
+                        <SiteAvatar
+                            slot="footer"
+                            media="https://avatars.githubusercontent.com/u/9159849?v=4"
+                        >
+                            Matias
+                        </SiteAvatar>
+                        <SiteSocials
+                            slot="footer"
+                            twitter="uppercod"
+                            github="uppercod"
+                        ></SiteSocials>
+                    </SiteCard>
+
+                    <SiteCard padding overflow dotColor="#FFE600">
+                        <iframe
+                            slot="media"
+                            src="//player.vimeo.com/video/135653517?title=0&portrait=0&byline=0&autoplay=1&loop=1&transparent=1&muted=1"
+                            width="100%"
+                        ></iframe>
+                        <SiteText color="subtitle">
+                            <h4>@atomico/exports</h4>
+                        </SiteText>
+                        <SiteText>
+                            <small>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit.
+                            </small>
+                        </SiteText>
+                        <SiteAvatar></SiteAvatar>
+                    </SiteCard>
+                    <SiteCard padding overflow dotColor="#FFE600">
+                        <img
+                            slot="media"
+                            src="https://cdn.dribbble.com/userupload/10211211/file/original-bc768aed301f6f0f9a6d8673dadd4da8.png?resize=1024x768"
+                        />
+                        <SiteText color="subtitle">
+                            <h5>@atomico/exports</h5>
+                        </SiteText>
+                        <SiteText>
+                            <small>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit.
+                            </small>
+                        </SiteText>
+                        <SiteAvatar></SiteAvatar>
+                    </SiteCard>
                     <SiteCard
                         padding
                         overflow
@@ -316,6 +353,18 @@ function site() {
                             <small>
                                 Lorem ipsum dolor sit amet, consectetur
                                 adipisicing elit.
+                            </small>
+                        </SiteText>
+                    </SiteCard>
+                    <SiteCard padding overflow dotColor="#00FF90">
+                        <SiteText color="subtitle">
+                            <h4>@atomico/ui</h4>
+                        </SiteText>
+                        <SiteText>
+                            <small>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Facere officiis, consequuntur
+                                laudantium nisi minima totam.
                             </small>
                         </SiteText>
                     </SiteCard>
