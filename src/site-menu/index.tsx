@@ -118,5 +118,3 @@ siteMenu.styles = [
 ];
 
 export const SiteMenu = c(siteMenu);
-
-customElements.define("site-menu", SiteMenu);

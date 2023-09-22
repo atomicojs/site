@@ -68,5 +68,3 @@ siteText.styles = [
 ];
 
 export const SiteText = c(siteText);
-
-customElements.define("site-text", SiteText);

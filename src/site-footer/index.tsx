@@ -47,5 +47,3 @@ siteFooter.styles = [
 ];
 
 export const SiteFooter = c(siteFooter);
-
-customElements.define("site-footer", SiteFooter);

@@ -81,5 +81,3 @@ siteHeader.styles = [
 ];
 
 export const SiteHeader = c(siteHeader);
-
-customElements.define("site-header", SiteHeader);

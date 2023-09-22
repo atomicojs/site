@@ -40,5 +40,3 @@ siteTitle.styles = [
 ];
 
 export const SiteTitle = c(siteTitle);
-
-customElements.define("site-title", SiteTitle);

@@ -11,6 +11,9 @@ export default defineConfig({
     plugins: [
         atomico({
             cssLiterals: { postcss: true },
+            customElements: {
+                define: ["./src/**/*"],
+            },
         }),
     ],
 });

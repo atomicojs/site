@@ -26,5 +26,3 @@ siteSlide.styles = [
 ];
 
 export const SiteSlide = c(siteSlide);
-
-customElements.define("site-slide", SiteSlide);

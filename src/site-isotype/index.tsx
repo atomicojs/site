@@ -189,5 +189,3 @@ siteIsotype.styles = [
 ];
 
 export const SiteIsotype = c(siteIsotype);
-
-customElements.define("site-isotype", SiteIsotype);

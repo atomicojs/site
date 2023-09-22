@@ -139,5 +139,3 @@ siteSection.styles = [
 ];
 
 export const SiteSection = c(siteSection);
-
-customElements.define("site-section", SiteSection);

@@ -188,5 +188,3 @@ graphDiff.styles = [
 ];
 
 export const SiteGraphDiff = c(graphDiff);
-
-customElements.define("site-graph-diff", SiteGraphDiff);

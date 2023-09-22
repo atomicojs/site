@@ -57,5 +57,3 @@ siteGrid.styles = [
 ];
 
 export const SiteGrid = c(siteGrid);
-
-customElements.define("site-grid", SiteGrid);

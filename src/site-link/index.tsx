@@ -86,5 +86,3 @@ siteLink.styles = [
 ];
 
 export const SiteLink = c(siteLink);
-
-customElements.define("site-link", SiteLink);

@@ -92,5 +92,3 @@ siteGradient.styles = [
 ];
 
 export const SiteGradient = c(siteGradient);
-
-customElements.define("site-gradient", SiteGradient);
