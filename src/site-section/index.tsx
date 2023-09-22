@@ -1,7 +1,7 @@
 import { useSlot } from "@atomico/hooks/use-slot";
 import { Props, c, css, useRef } from "atomico";
 import { serialize } from "atomico/utils";
-import { tokens } from "../site-tokens/site-tokens";
+import { tokens } from "../site-tokens";
 
 function siteSection({ bigLabel }: Props<typeof siteSection>) {
     const refHeader = useRef();

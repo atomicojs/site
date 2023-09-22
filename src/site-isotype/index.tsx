@@ -1,5 +1,5 @@
 import { c, css, useRef } from "atomico";
-import { tokens } from "../site-tokens/site-tokens";
+import { tokens } from "../site-tokens";
 import { useParallax } from "@atomico/hooks/use-parallax";
 
 function siteIsotype() {

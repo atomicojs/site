@@ -1,5 +1,5 @@
 import { Props, c, css, useHost, useRef } from "atomico";
-import { tokens } from "../site-tokens/site-tokens";
+import { tokens } from "../site-tokens";
 import { useParallax } from "@atomico/hooks/use-parallax";
 
 function siteLink({ href, target, dot }: Props<typeof siteLink>) {

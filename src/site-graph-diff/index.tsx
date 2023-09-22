@@ -1,6 +1,6 @@
 import { Props, c, css, useProp } from "atomico";
-import { tokens } from "../components";
-import { SiteButton } from "../site-button/site-button";
+import { tokens } from "../site-tokens";
+import { SiteButton } from "../site-button";
 
 const staticNode = () => (
     <tr class="tr-subgroup" staticNode>

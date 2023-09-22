@@ -1,5 +1,5 @@
 import { Type, Props, c, css } from "atomico";
-import { tokens } from "../site-tokens/site-tokens";
+import { tokens } from "../site-tokens";
 import { useResponsiveState } from "@atomico/hooks/use-responsive-state";
 
 function siteGrid({ columns, gap }: Props<typeof siteGrid>) {

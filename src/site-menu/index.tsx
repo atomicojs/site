@@ -1,5 +1,5 @@
 import { c, css, useProp } from "atomico";
-import { tokens } from "../site-tokens/site-tokens";
+import { tokens } from "../site-tokens";
 
 function siteMenu() {
     const [show, setShow] = useProp<boolean>("show");

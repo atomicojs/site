@@ -1,5 +1,5 @@
 import { c, css } from "atomico";
-import { tokens } from "../site-tokens/site-tokens";
+import { tokens } from "../site-tokens";
 
 function siteAtom() {
     return (
@@ -73,5 +73,3 @@ siteAtom.styles = [
 ];
 
 export const SiteAtom = c(siteAtom);
-
-customElements.define("site-atom", SiteAtom);

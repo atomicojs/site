@@ -1,5 +1,5 @@
 import { c, css, Props } from "atomico";
-import { tokens } from "../site-tokens/site-tokens";
+import { tokens } from "../site-tokens";
 function siteCard({ dotColor }: Props<typeof siteCard>) {
     return (
         <host shadowDom>
@@ -83,5 +83,3 @@ siteCard.styles = [
 ];
 
 export const SiteCard = c(siteCard);
-
-customElements.define("site-card", SiteCard);

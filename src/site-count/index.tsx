@@ -1,5 +1,5 @@
 import { Props, c, css } from "atomico";
-import { tokens } from "../site-tokens/site-tokens";
+import { tokens } from "../site-tokens";
 
 function siteCount({ value, color }: Props<typeof siteCount>) {
     return (
@@ -53,5 +53,3 @@ siteCount.styles = [
 ];
 
 export const SiteCount = c(siteCount);
-
-customElements.define("site-count", SiteCount);

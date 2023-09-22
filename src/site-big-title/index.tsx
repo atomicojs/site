@@ -1,5 +1,5 @@
 import { c, css } from "atomico";
-import { tokens } from "../components";
+import { tokens } from "../site-tokens";
 
 function siteBigTitle() {
     return (
@@ -46,5 +46,3 @@ siteBigTitle.styles = [
 ];
 
 export const SiteBigTitle = c(siteBigTitle);
-
-customElements.define("site-big-title", SiteBigTitle);

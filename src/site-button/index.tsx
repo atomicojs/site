@@ -1,6 +1,6 @@
 import { Props, c, css, useRef } from "atomico";
 import { useRender } from "@atomico/hooks/use-render";
-import { tokens } from "../site-tokens/site-tokens";
+import { tokens } from "../site-tokens";
 
 function siteButton({ color, href, open }: Props<typeof siteButton>) {
     const ref = useRef<HTMLAnchorElement>();
@@ -54,5 +54,3 @@ siteButton.styles = [
 ];
 
 export const SiteButton = c(siteButton);
-
-customElements.define("site-button", SiteButton);

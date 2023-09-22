@@ -1,5 +1,5 @@
 import { c, css } from "atomico";
-import { tokens } from "../site-tokens/site-tokens";
+import { tokens } from "../site-tokens";
 
 function siteFooter() {
     return (

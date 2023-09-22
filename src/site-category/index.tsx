@@ -1,7 +1,7 @@
 import { useProxySlot } from "@atomico/hooks/use-slot";
 import autoAnimate from "@formkit/auto-animate";
 import { c, css, useCallback, useProp, useRef, useState } from "atomico";
-import { tokens } from "../site-tokens/site-tokens";
+import { tokens } from "../site-tokens";
 
 function siteCategories() {
     const refSlots = useRef();
@@ -82,5 +82,3 @@ siteCategories.styles = [
 ];
 
 export const SiteCategories = c(siteCategories);
-
-customElements.define("site-categories", SiteCategories);
