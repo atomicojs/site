@@ -1,9 +1,6 @@
 {
     "name": "@atomico/site",
     "description": "Atomico site Components",
-    "workspaces": [
-        "src/*"
-    ],
     "publishConfig": {
         "access": "public"
     },
