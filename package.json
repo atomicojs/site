@@ -17,7 +17,7 @@
         "pkg:types": "tsc",
         "pkg:compile": "library src/**/* !src/{site,site-why}.tsx",
         "pkg:exports": "exports lib/**/* --wrappers --main components --tmp",
-        "prepublishOnly": "npm run exports",
+        "prepublishOnly": "run pkg:* -s",
         "create": "scaff templates/component src"
     },
     "dependencies": {
@@ -29,6 +29,7 @@
     "devDependencies": {
         "@atomico/exports": "^1.10.0",
         "@atomico/postcss-tokens": "^2.1.0",
+        "@atomico/run": "^0.12.0",
         "@atomico/scaffold": "latest",
         "@atomico/tsconfig": "1.0.0",
         "@atomico/vite": "^2.11.2",
