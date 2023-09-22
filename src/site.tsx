@@ -441,6 +441,4 @@ site.styles = [
     `,
 ];
 
-export const Site = c(site);
-
-customElements.define("my-site", Site);
+export const MySite = c(site);
