@@ -4,7 +4,7 @@
     "publishConfig": {
         "access": "public"
     },
-    "version": "0.6.0",
+    "version": "0.7.0",
     "type": "module",
     "scripts": {
         "start": "vite --force",
@@ -13,7 +13,7 @@
         "coverage": "vitest run --coverage",
         "pkg:types": "tsc",
         "pkg:compile": "library src/**/* !src/{site,site-why}.tsx",
-        "pkg:exports": "exports lib/**/* --wrappers --main components --tmp",
+        "pkg:exports": "exports lib/**/* --wrappers --main components",
         "prepublishOnly": "run pkg:* -s",
         "create": "scaff templates/component src"
     },
