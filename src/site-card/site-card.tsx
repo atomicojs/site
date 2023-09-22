@@ -1,6 +1,5 @@
-import { Props, c, css } from "atomico";
+import { c, css, Props } from "atomico";
 import { tokens } from "../site-tokens/site-tokens";
-
 function siteCard({ dotColor }: Props<typeof siteCard>) {
     return (
         <host shadowDom>
@@ -35,6 +34,7 @@ siteCard.styles = [
             box-sizing: border-box;
             border-radius: var(--radius);
             position: relative;
+            display: block;
         }
         :host([dot-color]) .dot {
             width: var(--dot-size);

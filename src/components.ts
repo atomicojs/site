@@ -17,3 +17,5 @@ export * from "./site-eye/site-eye";
 export * from "./site-footer/site-footer";
 export * from "./site-big-title/site-big-title";
 export * from "./site-graph-diff/site-graph-diff";
+export * from "./site-category/site-category";
+export * from "./site-gradient/site-gradient";

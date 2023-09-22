@@ -19,28 +19,31 @@
         "create": "scaff templates/component src"
     },
     "dependencies": {
-        "@atomico/compare-content": "^1.0.5",
-        "@atomico/hooks": "^3.46.0",
-        "atomico": "latest"
+        "@atomico/compare-content": "^1.2.3",
+        "@atomico/hooks": "^3.49.0",
+        "@formkit/auto-animate": "^0.8.0",
+        "atomico": "^1.74.0"
     },
     "devDependencies": {
-        "@atomico/exports": "^0.34.0",
-        "@atomico/postcss-tokens": "^1.5.0",
+        "@atomico/exports": "^1.10.0",
+        "@atomico/postcss-tokens": "^2.1.0",
         "@atomico/scaffold": "latest",
         "@atomico/tsconfig": "1.0.0",
-        "@atomico/vite": "latest",
-        "happy-dom": "latest",
+        "@atomico/vite": "^2.11.2",
         "typescript": "^4.7.4",
-        "vite": "latest",
-        "vitest": "latest"
+        "vite": "^4.4.9"
     },
     "prettier": {
         "tabWidth": 4,
-        "singleQuote": false
+        "singleQuote": false,
+        "endOfLine": "lf"
     },
     "postcss": {
         "plugins": {
-            "@atomico/postcss-tokens": {}
+            "@atomico/postcss-tokens": {
+                "prefix": "atomico",
+                "defaultValue": true
+            }
         }
     }
 }

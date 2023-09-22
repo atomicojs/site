@@ -2,18 +2,23 @@ import { Props, c, css, useHost, useRef } from "atomico";
 import { tokens } from "../site-tokens/site-tokens";
 import { useParallax } from "@atomico/hooks/use-parallax";
 
-function siteLink({ href, target }: Props<typeof siteLink>) {
+function siteLink({ href, target, dot }: Props<typeof siteLink>) {
     const refLink = useRef();
     const host = useHost();
     const state = useParallax(host);
     return (
         <host shadowDom onclick={() => refLink.current.click()}>
             <a ref={refLink} href={href} target={target}></a>
+            {dot && (
+                <div class="dot">
+                    <div class="dot" />
+                </div>
+            )}
             <div class="layer">
                 <div className="layer-line"></div>
             </div>
             <slot></slot>
-            <style>{`:host{--position-x: ${state.x}}`}</style>
+            <style>{`:host{--position-x: ${state.x};--dot-color: ${dot}}`}</style>
         </host>
     );
 }
@@ -21,6 +26,7 @@ function siteLink({ href, target }: Props<typeof siteLink>) {
 siteLink.props = {
     href: String,
     target: String,
+    dot: { type: String, reflect: true },
 };
 
 siteLink.styles = [
@@ -30,7 +36,8 @@ siteLink.styles = [
             --padding: var(--size-2) 0px;
             --opacity: 0;
             --delay: 0s;
-            display: block;
+            --dot-size: var(--size-2);
+            display: flex;
             color: var(--color-title);
             text-transform: uppercase;
             font-size: var(--size-3);
@@ -40,10 +47,22 @@ siteLink.styles = [
             position: relative;
             cursor: pointer;
             overflow: hidden;
+            align-items: center;
+            gap: var(--dot-size);
         }
         :host(:hover) {
             --opacity: 1;
             --delay: 0s;
+        }
+        .dot {
+            width: var(--dot-size);
+            height: var(--dot-size);
+            background: var(--dot-color);
+            border-radius: 100%;
+        }
+        .dot > .dot {
+            background: var(--dot-color);
+            filter: blur(calc(var(--dot-size) * 0.5));
         }
         .layer {
             width: 100%;

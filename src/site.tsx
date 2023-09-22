@@ -1,44 +1,54 @@
 import { c, css } from "atomico";
-import {
-    tokens,
-    SiteGrid,
-    SiteSection,
-    SiteLink,
-    SiteText,
-    SiteTitle,
-    SiteCount,
-    SiteCard,
-    SiteIsotype,
-    SiteHeader,
-    SiteButton,
-    SiteAuthor,
-    SiteMenu,
-    SiteEye,
-    SiteFooter,
-    SiteGraphDiff,
-} from "./components";
+import imgAtom from "./assets/atom.svg";
+import imgAuthor from "./assets/author.jpg";
+import imgByUppercod from "./assets/by-uppercod.svg";
+import iconCode from "./assets/icon-code.svg";
+import iconDiscord from "./assets/icon-discord.svg";
+import iconDonation from "./assets/icon-donation.svg";
+import iconFunction from "./assets/icon-function.svg";
+import iconLinkedin from "./assets/icon-linkedin.svg";
+import iconShadow from "./assets/icon-shadow.svg";
+import iconShare from "./assets/icon-share.svg";
+import iconTwitter from "./assets/icon-twitter.svg";
+import iconWatch from "./assets/icon-watch.svg";
+import imgLogoText from "./assets/logo-text.svg";
+import imgLogo from "./assets/logo.svg";
 import imgStep1 from "./assets/step-1.svg";
 import imgStep2 from "./assets/step-2.svg";
 import imgStep3 from "./assets/step-3.svg";
 import imgStep4 from "./assets/step-4.svg";
-import imgAtom from "./assets/atom.svg";
-import imgLogo from "./assets/logo.svg";
-import imgLogoText from "./assets/logo-text.svg";
-import imgAuthor from "./assets/author.jpg";
-import imgByUppercod from "./assets/by-uppercod.svg";
-import iconWatch from "./assets/icon-watch.svg";
-import iconShadow from "./assets/icon-shadow.svg";
-import iconFunction from "./assets/icon-function.svg";
-import iconDiscord from "./assets/icon-discord.svg";
-import iconLinkedin from "./assets/icon-linkedin.svg";
-import iconTwitter from "./assets/icon-twitter.svg";
-import iconDonation from "./assets/icon-donation.svg";
-import iconCode from "./assets/icon-code.svg";
-import iconShare from "./assets/icon-share.svg";
-
+import {
+    SiteAuthor,
+    SiteButton,
+    SiteCard,
+    SiteCategories,
+    SiteCount,
+    SiteEye,
+    SiteFooter,
+    SiteGrid,
+    SiteHeader,
+    SiteIsotype,
+    SiteLink,
+    SiteMenu,
+    SiteSection,
+    SiteText,
+    SiteTitle,
+    SiteGradient,
+    tokens,
+} from "./components";
 function site() {
     return (
         <host shadowDom>
+            <SiteSection style="height: 50vh">
+                <SiteGradient slot="background" />
+                <SiteTitle full-width>
+                    <h1>¿Por que sucede?</h1>
+                </SiteTitle>
+                <SiteText slot="">
+                    Create interfaces with code
+                    <br /> simple, fast and light
+                </SiteText>
+            </SiteSection>
             <SiteHeader>
                 <img src={imgLogo} slot="logo" />
                 <SiteLink
@@ -182,19 +192,52 @@ function site() {
                     sunt magna
                 </SiteText>
                 <img slot="right" src={imgAtom} />
-                <SiteGrid slot="content" columns="1, 2 768px, 3 980px">
-                    <SiteCard padding overflow dotColor="#FFE600">
-                        <SiteText color="subtitle">
-                            <h4>@atomico/exports</h4>
-                        </SiteText>
-                        <SiteText>
-                            <small>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit.
-                            </small>
-                        </SiteText>
-                    </SiteCard>
-                    <SiteCard padding overflow dotColor="#0088FF">
+                <SiteCategories
+                    category="*"
+                    slot="footer"
+                    columns="1, 2 768px, 3 980px"
+                >
+                    <SiteLink slot="category" data-category="*" dot="#FFE600">
+                        All
+                    </SiteLink>
+                    <SiteLink
+                        slot="category"
+                        data-category="category-1"
+                        dot="#0088FF"
+                    >
+                        Category 1
+                    </SiteLink>
+                    <SiteLink
+                        slot="category"
+                        data-category="category-2"
+                        dot="#00FF90"
+                    >
+                        Category 2
+                    </SiteLink>
+                    <a
+                        href="upper.cl"
+                        target="_blank"
+                        data-category="category-1"
+                    >
+                        <SiteCard padding overflow dotColor="#FFE600">
+                            <SiteText color="subtitle">
+                                <h4>@atomico/exports</h4>
+                            </SiteText>
+                            <SiteText>
+                                <small>
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit.
+                                </small>
+                            </SiteText>
+                        </SiteCard>
+                    </a>
+
+                    <SiteCard
+                        padding
+                        overflow
+                        dotColor="#0088FF"
+                        data-category="category-2"
+                    >
                         <SiteText color="subtitle">
                             <h4>@atomico/router</h4>
                         </SiteText>
@@ -205,7 +248,12 @@ function site() {
                             </small>
                         </SiteText>
                     </SiteCard>
-                    <SiteCard padding overflow dotColor="#00FF90">
+                    <SiteCard
+                        padding
+                        overflow
+                        dotColor="#00FF90"
+                        data-category="category-3"
+                    >
                         <SiteText color="subtitle">
                             <h4>@atomico/store</h4>
                         </SiteText>
@@ -271,7 +319,7 @@ function site() {
                             </small>
                         </SiteText>
                     </SiteCard>
-                </SiteGrid>
+                </SiteCategories>
             </SiteSection>
             <SiteSection>
                 <SiteTitle>

@@ -1,21 +1,13 @@
 import { Props, c, css } from "atomico";
 import { tokens } from "../site-tokens/site-tokens";
 
-function siteTitle({ size }: Props<typeof siteTitle>) {
+function siteTitle() {
     return (
         <host shadowDom>
             <slot></slot>
-            <style>{`:host{--font-size: var(--size-${size})}`}</style>
         </host>
     );
 }
-
-siteTitle.props = {
-    size: {
-        type: Number,
-        value: 7,
-    },
-};
 
 siteTitle.styles = [
     tokens,
@@ -27,8 +19,22 @@ siteTitle.styles = [
             position: relative;
         }
         ::slotted(*) {
-            font-size: var(--font-size);
             margin: 0px;
+        }
+        ::slotted(h1) {
+            font-size: var(--font-size-title-1);
+        }
+        ::slotted(h2) {
+            font-size: var(--font-size-title-2);
+        }
+        ::slotted(h3) {
+            font-size: var(--font-size-title-3);
+        }
+        ::slotted(h4) {
+            font-size: var(--font-size-title-4);
+        }
+        ::slotted(h5) {
+            font-size: var(--font-size-title-5);
         }
     `,
 ];

@@ -6,15 +6,15 @@ function siteText({ size, color }: Props<typeof siteText>) {
         <host shadowDom>
             <slot></slot>
             <style>{`:host{
-                --font-size: var(--size-${size});
-                --color: var(--color-${color});
+                ${size ? `--font-size: var(--size-${size}) !important;` : ""}
+                ${color ? `--color: var(--color-${color}) !important;` : ""}
             }`}</style>
         </host>
     );
 }
 
 siteText.props = {
-    size: { type: Number, value: 4, reflect: true },
+    size: { type: Number, reflect: true },
     color: { type: String, value: "text" },
     elegant: { type: Boolean, reflect: true },
     textCenter: { type: Boolean, reflect: true },

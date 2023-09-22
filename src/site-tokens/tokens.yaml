@@ -11,13 +11,13 @@ color:
 maxwidth: 1080px
 button:
     font:
-        size: "@size.4"
+        size: "calmp($size.4, 1vh, $size.6)"
     border:
         width: 2px
-        radius: "@size.1"
-        color: "@color.card.border"
-    gap: "@size.4"
-    padding: "@size.2 @size.4"
+        radius: "$size.1"
+        color: "$color.card.border"
+    gap: "$size.4"
+    padding: "$size.2 $size.4"
     color: "$color.title"
 size:
     "1": 4px
@@ -39,12 +39,21 @@ font:
         title: 600
         text: 300
         bold: 500
+    size:
+        =: "clamp($$size.4 , 2.5vw , $$size.5)"
+        title:
+            1: "clamp($$size.7 , 5vw , $$size.8)"
+            2: "clamp($$size.6 , 5vw , $$size.7)"
+            3: "clamp($$size.5 , 5vw , $$size.6)"
+            4: "clamp($$size.4 , 5vw , $$size.5)"
+            5: "clamp($$size.3 , 5vw , $$size.4)"
+
 variation:
     [small]:
         button:
             font:
-                size: "@size.3"
-            padding: "@size.1 @size.3"
-            gap: "@size.2"
+                size: "$$size.3"
+            padding: "$$size.1 $$size.3"
+            gap: "$$size.2"
             border:
                 radius: 100px
