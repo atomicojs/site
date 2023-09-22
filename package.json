@@ -24,7 +24,7 @@
         "atomico": "^1.74.0"
     },
     "devDependencies": {
-        "@atomico/exports": "^1.11.0",
+        "@atomico/exports": "^1.11.1",
         "@atomico/postcss-tokens": "^2.1.0",
         "@atomico/run": "^0.12.0",
         "@atomico/scaffold": "latest",
