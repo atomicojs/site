@@ -14,8 +14,9 @@
         "build": "vite build",
         "test": "vitest",
         "coverage": "vitest run --coverage",
+        "pkg:types": "tsc",
         "pkg:compile": "library src/**/* !src/{site,site-why}.tsx",
-        "pkg:exports": "exports src/**/*.{ts,tsx} !src/{site,site-why}.tsx  --exports --types --main components",
+        "pkg:exports": "exports lib/**/* --wrappers --main components --tmp",
         "prepublishOnly": "npm run exports",
         "create": "scaff templates/component src"
     },
