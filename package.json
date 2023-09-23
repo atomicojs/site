@@ -12,8 +12,8 @@
         "test": "vitest",
         "coverage": "vitest run --coverage",
         "pkg:types": "tsc",
-        "pkg:compile": "library src/**/* !src/{site,site-why}.tsx",
-        "pkg:exports": "exports lib/**/* types/**/* --wrappers --main components --centralize-wrappers",
+        "pkg:compile": "library \"src/**/*\" \"!src/{site,site-why}.tsx\"",
+        "pkg:exports": "exports \"lib/**/*\" \"types/**/*\" --wrappers --main components --centralize-wrappers",
         "prepublishOnly": "run pkg:* -s",
         "create": "scaff templates/component src"
     },
