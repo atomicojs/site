@@ -19,7 +19,7 @@
     },
     "dependencies": {
         "@atomico/compare-content": "^1.2.3",
-        "@atomico/hooks": "^3.49.1",
+        "@atomico/hooks": "*",
         "@formkit/auto-animate": "^0.8.0",
         "atomico": "^1.74.0"
     },
