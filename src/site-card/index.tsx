@@ -57,6 +57,7 @@ siteCard.styles = [
             --display-media: none;
             --display-content: none;
             --display-footer: none;
+            --display-dot: none;
         }
         :host([layout*="media"]) {
             --display-media: block;
@@ -67,20 +68,23 @@ siteCard.styles = [
         :host([layout*="footer"]) {
             --display-footer: flex;
         }
-        :host([dot-color]) .dot {
+        :host([dot-color]) {
+            --display-dot: block;
+        }
+        .dot {
             width: var(--card-dot-size);
             height: var(--card-dot-size);
             background: var(--card-dot-bgcolor);
             transition: var(--card-dot-transition);
             position: absolute;
         }
-        :host([dot-color]) .dot-circle {
+        .dot-circle {
             top: 20px;
             right: 20px;
             border-radius: 100%;
             z-index: 2;
         }
-        :host([dot-color]) .dot-gradient {
+        .dot-gradient {
             width: 100%;
             height: 100%;
             top: 0px;
@@ -108,6 +112,9 @@ siteCard.styles = [
             object-fit: cover;
             display: block;
             border: none;
+        }
+        .dot {
+            display: var(--display-dot);
         }
         .media {
             display: var(--display-media);
