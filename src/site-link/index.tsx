@@ -7,8 +7,8 @@ function siteLink({ href, target, dot }: Props<typeof siteLink>) {
     const host = useHost();
     const state = useParallax(host);
     return (
-        <host shadowDom onclick={() => refLink.current.click()}>
-            <a ref={refLink} href={href} target={target}></a>
+        <host shadowDom onclick={() => href && refLink.current.click()}>
+            {href && <a ref={refLink} href={href} target={target}></a>}
             {dot && (
                 <div class="dot">
                     <div class="dot" />
