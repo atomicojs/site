@@ -54,7 +54,7 @@ function siteCategories() {
 }
 
 siteCategories.props = {
-    category: { type: String },
+    category: { type: String, value: "*" },
 };
 
 siteCategories.styles = [
