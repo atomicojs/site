@@ -12,19 +12,19 @@ color:
         border: rgba(255,255,255,.1)
     link:
         social:
-            container: $color.background
-            invert: $color.invert
+            container: $color-background
+            invert: $color-invert
 maxwidth: 1080px
 button:
     font:
-        size: "calmp($$size.4, 1vh, $$size.6)"
+        size: "calmp($size-4, 1vh, $size-6)"
     border:
         width: 2px
-        radius: "$size.1"
-        color: "$color.card.border"
-    gap: "$size.4"
-    padding: "$size.2 $size.4"
-    color: "$color.title"
+        radius: "$size-1"
+        color: "$color-card-border"
+    gap: "$size-4"
+    padding: "$size-2 $size-4"
+    color: "$color-title"
 
 size:
     "1": 4px
@@ -47,46 +47,46 @@ font:
         text: 300
         bold: 500
     size:
-        =: "clamp($$size.4 , 2.5vw , $$size.5)"
+        =: "clamp($size-4 , 2.5vw , $size.5)"
         title:
-            1: "clamp($$size.7 , 5vw , $$size.8)"
-            2: "clamp($$size.6 , 5vw , $$size.7)"
-            3: "clamp($$size.5 , 5vw , $$size.6)"
-            4: "clamp($$size.4 , 5vw , $$size.5)"
-            5: "clamp($$size.3 , 5vw , $$size.4)"
+            1: "clamp($size-7 , 5vw , $size-8)"
+            2: "clamp($size-6 , 5vw , $size-7)"
+            3: "clamp($size-5 , 5vw , $size-6)"
+            4: "clamp($size-4 , 5vw , $size-5)"
+            5: "clamp($size-3 , 5vw , $size-4)"
 variation:
-    [small]:
+    (small):
         button:
             font:
-                size: "$$size.3"
-            padding: "$$size.1 $$size.3"
-            gap: "$$size.2"
+                size: "$size-3"
+            padding: "$size-1 $size-3"
+            gap: "$size-2"
             border:
                 radius: 100px
 # New form of token declaration
 card:
-    gap: $size.4
+    gap: $size-4
     content:
-        space: $size.5
+        space: $size-5
     media:
-        space: $size.1
+        space: $size-1
     footer:
-        space: $$size.2
+        space: $size-2
     dot:
-        size: $size.2
+        size: $size-2
         transition: 1s ease all
     border:
-        =: $$card.border.width solid $$card.border.color
+        =: $card-border-width solid $card-border-color
         width: 1px
-        radius: "$size.2"
-        color: "$color.card.border"
+        radius: "$size-2"
+        color: "$color-card-border"
 link:
     transition: .3s ease all
     social:
         space: 2px
-        size: $size.6
+        size: $size-6
         border:
-            =: $$link.social.border.width solid $$link.social.border.color
+            =: $link-social-border-width solid $link-social-border-color
             width: 1px
             radius: 100px
-            color: $color.divide
+            color: $color-divide
