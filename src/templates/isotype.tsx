@@ -1,17 +1,17 @@
 import imgLogoText from "../assets/logo-text.svg";
-import { SiteGrid, SiteIsotype, SiteText } from "../components";
+import { SiteRow, SiteIsotype, SiteText } from "../components";
 
 export const TemplateIsotype = () => (
     <SiteIsotype>
-        <SiteGrid gap={3} centered>
+        <SiteRow content="center">
             <img src={imgLogoText} alt="" />
-            <SiteText elegant color="accent">
-                WEBCOMPONENTS
+            <SiteText elegant>
+                <strong>WEBCOMPONENTS</strong>
             </SiteText>
             <SiteText textCenter>
                 Create interfaces with code
                 <br /> simple, fast and light
             </SiteText>
-        </SiteGrid>
+        </SiteRow>
     </SiteIsotype>
 );

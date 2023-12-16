@@ -6,6 +6,8 @@ import {
     SiteMenu,
     SiteSocials,
     SiteText,
+    SiteRow,
+    SiteSection,
 } from "../components";
 
 export const TemplateHeader = () => (
@@ -22,37 +24,25 @@ export const TemplateHeader = () => (
         <SiteLink slot="link">Support</SiteLink>
         <SiteMenu slot="action">
             <SiteEye class="eye"></SiteEye>
-            <div class="menu">
-                <div class="menu-group">
+            <SiteSection>
+                <SiteRow>
                     <SiteText elegant color="accent">
                         SOCIALS
                     </SiteText>
-                    <div class="menu-items">
+                    <SiteRow flex>
                         <SiteLink>TWITTER</SiteLink>
                         <SiteLink>LINKEDIN</SiteLink>
                         <SiteLink>DISCORD</SiteLink>
                         <SiteLink>GITHUB</SiteLink>
-                    </div>
-                    <SiteText elegant color="accent">
-                        STARTED
-                    </SiteText>
-                    <div class="menu-items">
-                        <SiteLink>Get started</SiteLink>
-                        <SiteLink>Template</SiteLink>
-                        <SiteLink>Props</SiteLink>
-                        <SiteLink>Hooks</SiteLink>
-                    </div>
-                    <SiteText elegant color="accent">
-                        UTILITIES
-                    </SiteText>
-                    <div class="menu-items">
-                        <SiteLink>@atomico/exports</SiteLink>
-                        <SiteLink>@atomico/ui</SiteLink>
-                        <SiteLink>@atomico/hooks</SiteLink>
-                        <SiteLink>More</SiteLink>
-                    </div>
-                </div>
-            </div>
+                    </SiteRow>
+                    <SiteRow flex>
+                        <SiteLink>TWITTER</SiteLink>
+                        <SiteLink>LINKEDIN</SiteLink>
+                        <SiteLink>DISCORD</SiteLink>
+                        <SiteLink>GITHUB</SiteLink>
+                    </SiteRow>
+                </SiteRow>
+            </SiteSection>
         </SiteMenu>
         <SiteSocials
             twitter="atomicojs"

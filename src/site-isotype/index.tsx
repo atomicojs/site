@@ -1,6 +1,7 @@
 import { c, css, useRef } from "atomico";
 import { tokens } from "../site-tokens";
 import { useParallax } from "@atomico/hooks/use-parallax";
+import { SitePlanet } from "../site-planet";
 
 function siteIsotype() {
     const host = useRef(globalThis);

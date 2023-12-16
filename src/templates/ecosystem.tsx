@@ -8,20 +8,26 @@ import {
     SiteSocials,
     SiteText,
     SiteTitle,
+    SiteRow,
+    SitePlanet,
 } from "../components";
 
 export const TemplateEcosystem = () => (
     <SiteSection>
-        <SiteTitle>
-            <h1>The Atomico Ecosystem</h1>
-        </SiteTitle>
-        <SiteText>
-            ullamco culpa duis excepteur quis amet ad proident Lorem esse eu
-            labore excepteur anim deserunt{" "}
-            <strong>occaecat veniam dolor</strong>
-            sunt magna
-        </SiteText>
-        <img slot="right" src={imgAtom} />
+        <SiteRow colsMd="1fr 1fr">
+            <SiteRow>
+                <SiteTitle>
+                    <h1>The Atomico Ecosystem</h1>
+                </SiteTitle>
+                <SiteText>
+                    ullamco culpa duis excepteur quis amet ad proident Lorem
+                    esse eu labore excepteur anim deserunt{" "}
+                    <strong>occaecat veniam dolor</strong>
+                    sunt magna
+                </SiteText>
+            </SiteRow>
+            <SitePlanet />
+        </SiteRow>
         <SiteCategories category="*" columns="1, 2 768px, 3 980px">
             <SiteLink slot="category" data-category="*" dot="#FFE600">
                 All
@@ -32,8 +38,7 @@ export const TemplateEcosystem = () => (
             <SiteLink slot="category" data-category="category-2" dot="#00FF90">
                 Category 2
             </SiteLink>
-
-            <SiteCard padding overflow dotColor="#FFE600">
+            <SiteCard padding extended overflow dotColor="#FFE600">
                 <img
                     slot="media"
                     src="https://cdn.dribbble.com/userupload/10211211/file/original-bc768aed301f6f0f9a6d8673dadd4da8.png?resize=1024x768"
@@ -47,11 +52,8 @@ export const TemplateEcosystem = () => (
                         elit.
                     </small>
                 </SiteText>
-                <SiteAvatar
-                    slot="footer"
-                    media="https://avatars.githubusercontent.com/u/9159849?v=4"
-                >
-                    Matias
+                <SiteAvatar slot="footer" small detail="Matias">
+                    <img src="https://avatars.githubusercontent.com/u/9159849?v=4" />
                 </SiteAvatar>
                 <SiteSocials
                     slot="footer"
@@ -59,8 +61,7 @@ export const TemplateEcosystem = () => (
                     github="uppercod"
                 ></SiteSocials>
             </SiteCard>
-
-            <SiteCard padding overflow dotColor="#FFE600">
+            <SiteCard padding extended overflow dotColor="#FFE600">
                 <iframe
                     slot="media"
                     src="//player.vimeo.com/video/135653517?title=0&portrait=0&byline=0&autoplay=1&loop=1&transparent=1&muted=1"
@@ -75,9 +76,11 @@ export const TemplateEcosystem = () => (
                         elit.
                     </small>
                 </SiteText>
-                <SiteAvatar></SiteAvatar>
+                <SiteAvatar slot="footer" small detail="Matias">
+                    <img src="https://avatars.githubusercontent.com/u/9159849?v=4" />
+                </SiteAvatar>
             </SiteCard>
-            <SiteCard padding overflow dotColor="#FFE600">
+            <SiteCard padding extended overflow dotColor="#FFE600">
                 <img
                     slot="media"
                     src="https://cdn.dribbble.com/userupload/10211211/file/original-bc768aed301f6f0f9a6d8673dadd4da8.png?resize=1024x768"
@@ -91,7 +94,9 @@ export const TemplateEcosystem = () => (
                         elit.
                     </small>
                 </SiteText>
-                <SiteAvatar></SiteAvatar>
+                <SiteAvatar slot="footer" small detail="Matias">
+                    <img src="https://avatars.githubusercontent.com/u/9159849?v=4" />
+                </SiteAvatar>
             </SiteCard>
             <SiteCard
                 padding
@@ -125,7 +130,7 @@ export const TemplateEcosystem = () => (
                     </small>
                 </SiteText>
             </SiteCard>
-            <SiteCard padding overflow dotColor="#00FF90">
+            <SiteCard padding extended overflow dotColor="#00FF90">
                 <SiteText color="subtitle">
                     <h4>@atomico/hooks</h4>
                 </SiteText>
@@ -136,7 +141,7 @@ export const TemplateEcosystem = () => (
                     </small>
                 </SiteText>
             </SiteCard>
-            <SiteCard padding overflow dotColor="#00FF90">
+            <SiteCard padding extended overflow dotColor="#00FF90">
                 <SiteText color="subtitle">
                     <h4>@atomico/react</h4>
                 </SiteText>
@@ -147,7 +152,7 @@ export const TemplateEcosystem = () => (
                     </small>
                 </SiteText>
             </SiteCard>
-            <SiteCard padding overflow dotColor="#00FF90">
+            <SiteCard padding extended overflow dotColor="#00FF90">
                 <SiteText color="subtitle">
                     <h4>@atomico/router</h4>
                 </SiteText>
@@ -158,7 +163,7 @@ export const TemplateEcosystem = () => (
                     </small>
                 </SiteText>
             </SiteCard>
-            <SiteCard padding overflow dotColor="#00FF90">
+            <SiteCard padding extended overflow dotColor="#00FF90">
                 <SiteText color="subtitle">
                     <h4>@atomico/components</h4>
                 </SiteText>
@@ -169,7 +174,7 @@ export const TemplateEcosystem = () => (
                     </small>
                 </SiteText>
             </SiteCard>
-            <SiteCard padding overflow dotColor="#00FF90">
+            <SiteCard padding extended overflow dotColor="#00FF90">
                 <SiteText color="subtitle">
                     <h4>@atomico/ui</h4>
                 </SiteText>
@@ -180,7 +185,7 @@ export const TemplateEcosystem = () => (
                     </small>
                 </SiteText>
             </SiteCard>
-            <SiteCard padding overflow dotColor="#00FF90">
+            <SiteCard padding extended overflow dotColor="#00FF90">
                 <SiteText color="subtitle">
                     <h4>@atomico/ui</h4>
                 </SiteText>

@@ -1,5 +1,5 @@
 import { Props, c, css } from "atomico";
-import { tokens } from "../site-tokens";
+import { tokensColor, tokensLink, tokensSize } from "../site-tokens";
 import { Twitter, Github, Discord, Youtube } from "../site-socials/logos";
 
 function siteSocials({
@@ -58,29 +58,35 @@ siteSocials.props = {
 };
 
 siteSocials.styles = [
-    tokens,
+    tokensColor,
+    tokensSize,
+    tokensLink,
     css`
         :host {
             display: inline-flex;
             border-radius: 100px;
-            border: var(--link-social-border);
-            padding: var(--link-social-space);
-            --link-container: var(--color-link-social-container);
-            --link-invert: var(--color-link-social-invert);
+            border: var(--social-border);
+            padding: var(--social-space);
+            ---color-container: var(--color-link-social-container);
+            ---color-invert: var(--color-link-social-invert);
         }
         .link {
-            width: var(--link-social-size);
-            height: var(--link-social-size);
+            --size: calc(
+                var(--social-size) -
+                    (var(--social-space) + var(--social-border-width) * 2)
+            );
+            width: var(--size);
+            height: var(--size);
             display: flex;
             background: none;
             color: unset;
             border: none;
             border-radius: 100px;
-            background: var(--link-container);
-            color: var(--link-invert);
+            background: var(---color-container);
+            color: var(---color-invert);
             align-items: center;
             justify-content: center;
-            transition: var(--link-transition);
+            transition: var(--transition);
             cursor: pointer;
         }
         .link svg {
@@ -91,8 +97,8 @@ siteSocials.styles = [
             fill: currentColor;
         }
         .link:hover {
-            --link-container: var(--color-link-social-invert);
-            --link-invert: var(--color-link-social-container);
+            ---color-container: var(--color-link-social-invert);
+            ---color-invert: var(--color-link-social-container);
         }
     `,
 ];

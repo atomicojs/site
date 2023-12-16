@@ -1,5 +1,5 @@
 import { c, css, useRef } from "atomico";
-import { tokens } from "../site-tokens";
+import { tokens, tokensLayout, tokensSize } from "../site-tokens";
 import { useResizeObserverState } from "@atomico/hooks/use-resize-observer";
 
 function siteHeader() {
@@ -34,7 +34,8 @@ siteHeader.props = {
 };
 
 siteHeader.styles = [
-    tokens,
+    tokensSize,
+    tokensLayout,
     css`
         :host {
             --width-between: 200px;
@@ -52,7 +53,7 @@ siteHeader.styles = [
             width: 100%;
             display: grid;
             margin: 0px auto;
-            max-width: var(--maxwidth);
+            max-width: var(--layout-max-width);
             display: grid;
             align-items: center;
             justify-content: space-between;

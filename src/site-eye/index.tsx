@@ -1,5 +1,5 @@
 import { c, css, useRef } from "atomico";
-import { tokens } from "../site-tokens";
+import { tokens, tokensCard, tokensColor, tokensSize } from "../site-tokens";
 import { useParallax } from "@atomico/hooks/use-parallax";
 
 function siteEye() {
@@ -25,9 +25,12 @@ siteEye.props = {
 };
 
 siteEye.styles = [
-    tokens,
+    tokensColor,
     css`
         :host {
+            display: flex;
+            justify-content: center;
+            width: 100%;
             --size: 280px;
             --border: 1px solid var(--color-orbe);
         }

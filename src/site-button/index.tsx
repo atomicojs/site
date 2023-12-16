@@ -1,25 +1,13 @@
-import { Props, c, css, useRef } from "atomico";
-import { useRender } from "@atomico/hooks/use-render";
-import { tokens } from "../site-tokens";
+import { Props, c, css } from "atomico";
+import { tokensButton, tokensColor, tokensSize } from "../site-tokens";
+export { SiteButtons } from "./buttons";
 
-function siteButton({ color, href, open }: Props<typeof siteButton>) {
-    const ref = useRef<HTMLAnchorElement>();
-    useRender(
-        () =>
-            href && (
-                <a
-                    slot="link"
-                    href={href}
-                    ref={ref}
-                    target={open ? "_blank" : ""}
-                ></a>
-            ),
-        [href, open]
-    );
-
+function siteButton({ color }: Props<typeof siteButton>) {
     return (
-        <host shadowDom onclick={() => ref.current.click()}>
-            <slot></slot>
+        <host shadowDom>
+            <button>
+                <slot></slot>
+            </button>
             {color && (
                 <style>{`:host{--button-border-color:var( --color-${color},${color} )!important}`}</style>
             )}
@@ -30,25 +18,41 @@ function siteButton({ color, href, open }: Props<typeof siteButton>) {
 siteButton.props = {
     small: { type: Boolean, reflect: true },
     color: { type: String, reflect: true },
-    href: { type: String },
-    open: { type: String },
+    checked: { type: Boolean, reflect: true },
+    icon: { type: Boolean, reflect: true },
 };
 
 siteButton.styles = [
-    tokens,
+    tokensColor,
+    tokensSize,
+    tokensButton,
     css`
         :host {
-            display: inline-flex;
-            border: var(--button-border-width) solid var(--button-border-color);
-            border-radius: var(--button-border-radius);
+            display: content;
+        }
+        :host([icon]) {
+            --padding: 0;
+        }
+        button {
+            display: flex;
             justify-content: center;
             align-items: center;
-            gap: var(--button-gap);
-            padding: var(--button-padding);
+            height: var(--size);
+            min-width: var(--size);
+            padding: 100px;
+            background: var(--color-container);
+            color: var(--color);
+            padding: var(--padding);
+            border-radius: var(--radius);
+            border: var(--border);
+            border-radius: var(--border-radius);
+            font-family: unset;
+            font-size: var(--text-size);
+            box-sizing: border-box;
+            transition: var(--transition);
             cursor: pointer;
-            font-size: var(--button-font-size);
-            transition: 0.3s ease all;
-            color: var(--button-color);
+            letter-spacing: var(--text-spacing);
+            gap: 1em;
         }
     `,
 ];

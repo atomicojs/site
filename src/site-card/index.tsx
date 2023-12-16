@@ -24,7 +24,10 @@ function siteCard({ dotColor }: Props<typeof siteCard>) {
             <div class="dot dot-circle"></div>
             <div class="dot dot-gradient"></div>
             <div class="media">
-                <slot name="media" ref={refMedia} />
+                <svg width="100%" viewBox="0 0 320 220" />
+                <div class="media-view">
+                    <slot name="media" ref={refMedia} />
+                </div>
             </div>
             <div class="content">
                 <slot ref={refContent}></slot>
@@ -41,6 +44,7 @@ siteCard.props = {
     dotColor: { type: String, reflect: true },
     overflow: { type: Boolean, reflect: true },
     padding: { type: Boolean, reflect: true },
+    extended: { type: Boolean, reflect: true },
 };
 
 siteCard.styles = [
@@ -58,6 +62,10 @@ siteCard.styles = [
             --display-content: none;
             --display-footer: none;
             --display-dot: none;
+        }
+        :host([extended]) {
+            min-width: 100%;
+            min-height: 100%;
         }
         :host([layout*="media"]) {
             --display-media: block;
@@ -109,6 +117,7 @@ siteCard.styles = [
         }
         ::slotted([slot="media"]) {
             width: 100%;
+            height: 100%;
             object-fit: cover;
             display: block;
             border: none;
@@ -124,12 +133,21 @@ siteCard.styles = [
                 var(--card-border-radius) - var(--card-media-space)
             );
             position: relative;
+            margin-bottom: auto;
+        }
+        .media-view {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
         .content {
             display: var(--display-content);
             position: relative;
             gap: var(--card-gap);
             padding: var(--card-content-space);
+            margin: 0 0 auto;
         }
         .footer {
             display: var(--display-footer);
@@ -138,6 +156,7 @@ siteCard.styles = [
             border-top: var(--card-border);
             padding: var(--card-footer-space);
             position: relative;
+            margin-top: auto;
         }
     `,
 ];
