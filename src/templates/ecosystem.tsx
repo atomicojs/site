@@ -26,7 +26,7 @@ export const TemplateEcosystem = () => (
                     sunt magna
                 </SiteText>
             </SiteRow>
-            <SitePlanet />
+            <SitePlanet style="height:320px;width:320px" />
         </SiteRow>
         <SiteCategories category="*" columns="1, 2 768px, 3 980px">
             <SiteLink slot="category" data-category="*" dot="#FFE600">

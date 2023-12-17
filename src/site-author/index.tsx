@@ -1,6 +1,6 @@
+import { useParallax } from "@atomico/hooks";
 import { c, css, useRef } from "atomico";
-import { tokens } from "../site-tokens";
-import { useParallax } from "@atomico/hooks/use-parallax";
+import { tokensSize } from "../site-tokens";
 
 function siteAuthor() {
     const host = useRef(globalThis);
@@ -19,7 +19,7 @@ function siteAuthor() {
 }
 
 siteAuthor.styles = [
-    tokens,
+    tokensSize,
     css`
         :host {
             display: block;

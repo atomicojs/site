@@ -1,5 +1,5 @@
 import { c, css, useProp } from "atomico";
-import { tokens } from "../site-tokens";
+import { tokensColor, tokensLayout, tokensSize } from "../site-tokens";
 
 function siteMenu() {
     const [show, setShow] = useProp<boolean>("show");
@@ -74,7 +74,9 @@ siteMenu.props = {
 };
 
 siteMenu.styles = [
-    tokens,
+    tokensColor,
+    tokensSize,
+    tokensLayout,
     css`
         :host {
             display: block;
@@ -98,7 +100,7 @@ siteMenu.styles = [
             opacity: var(--opacity);
         }
         .content-inner {
-            max-width: var(--maxwidth);
+            max-width: var(--layout-max-width);
             height: 100%;
             margin: auto;
             position: relative;

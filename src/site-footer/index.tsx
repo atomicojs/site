@@ -1,5 +1,5 @@
 import { c, css } from "atomico";
-import { tokens } from "../site-tokens";
+import { tokensColor, tokensSize } from "../site-tokens";
 
 function siteFooter() {
     return (
@@ -17,7 +17,8 @@ function siteFooter() {
 }
 
 siteFooter.styles = [
-    tokens,
+    tokensColor,
+    tokensSize,
     css`
         :host {
             --padding: var(--size-8) var(--size-4);

@@ -1,5 +1,5 @@
-import { Props, c, css } from "atomico";
-import { tokens, tokensColor, tokensText } from "../site-tokens";
+import { c, css } from "atomico";
+import { tokensColor, tokensText } from "../site-tokens";
 
 function siteTitle() {
     return (

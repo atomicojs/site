@@ -1,6 +1,6 @@
 import { Props, c, css, useProp } from "atomico";
-import { tokens } from "../site-tokens";
 import { SiteButton } from "../site-button";
+import { tokensColor, tokensSize } from "../site-tokens";
 
 const staticNode = () => (
     <tr class="tr-subgroup" staticNode>
@@ -131,7 +131,8 @@ graphDiff.props = {
 };
 
 graphDiff.styles = [
-    tokens,
+    tokensColor,
+    tokensSize,
     css`
         :host {
             width: 100%;

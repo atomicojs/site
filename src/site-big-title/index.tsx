@@ -1,5 +1,5 @@
 import { c, css } from "atomico";
-import { tokens } from "../site-tokens";
+import { tokensColor, tokensText } from "../site-tokens";
 
 function siteBigTitle() {
     return (
@@ -11,19 +11,19 @@ function siteBigTitle() {
 }
 
 siteBigTitle.styles = [
-    tokens,
+    tokensText,
+    tokensColor,
     css`
         :host {
-            --font-weight: var(--font-weight-title);
-            --font-size: 30vh;
-            font-size: var(--font-size);
+            --size: 30vh;
+            font-size: var(--size);
             color: transparent;
             text-stroke: 1px var(--color-orbe);
             -webkit-text-stroke: 1px var(--color-orbe);
             position: relative;
             line-height: 1em;
-            font-weight: var(--font-weight);
-            margin-bottom: calc(var(--font-size) * -0.25);
+            font-weight: var(--text-weight-bold);
+            margin-bottom: calc(var(--size) * -0.25);
         }
         .gradient {
             position: absolute;

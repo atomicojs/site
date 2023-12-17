@@ -4,7 +4,11 @@ color:
     subtitle: "#fff"
     text: "rgba(255,255,255,.75)"
     accent: "#FF0099"
-    orbe: "#D600FF"
+    orbe:
+        =: "magenta"
+        1: tomato
+        2: "#ff00001c"
+        3: "#2e00ff24"
     divide: rgba(255,255,255,.2)
     invert: "#fff"
     card:
@@ -56,7 +60,7 @@ text:
     weight:
         =: 300
         medium: 500
-        bold: 600
+        bold: 700
     size:
         =: $size-4
         title:

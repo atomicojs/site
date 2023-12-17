@@ -1,7 +1,7 @@
-import { c, css, useRef } from "atomico";
-import { tokens } from "../site-tokens";
 import { useParallax } from "@atomico/hooks/use-parallax";
+import { c, css, useRef } from "atomico";
 import { SitePlanet } from "../site-planet";
+import { tokensColor, tokensSize } from "../site-tokens";
 
 function siteIsotype() {
     const host = useRef(globalThis);
@@ -47,7 +47,9 @@ function siteIsotype() {
                         }px)`;
                     }}
                     class="atom atom-1 atom-inner-shadow"
-                ></div>
+                >
+                    <SitePlanet class="planet" />
+                </div>
                 <div
                     ref={(ref) => {
                         ref.style.transform = `translate(${state.x * -50}px,${
@@ -55,7 +57,9 @@ function siteIsotype() {
                         }px)`;
                     }}
                     class="atom atom-2 atom-inner-shadow"
-                ></div>
+                >
+                    <SitePlanet class="planet" style="--duration: 60s" />
+                </div>
                 <div
                     ref={(ref) => {
                         ref.style.transform = `translate(${state.x * 100}px,${
@@ -63,7 +67,14 @@ function siteIsotype() {
                         }px)`;
                     }}
                     class="atom atom-3 atom-inner-shadow"
-                ></div>
+                >
+                    <SitePlanet
+                        class="planet"
+                        reverse
+                        y
+                        style="--duration: 30s"
+                    />
+                </div>
             </div>
             <div class="atom-content">
                 <div class="atom-inner">
@@ -79,7 +90,8 @@ siteIsotype.props = {
 };
 
 siteIsotype.styles = [
-    tokens,
+    tokensColor,
+    tokensSize,
     css`
         :host {
             width: 100%;
@@ -94,7 +106,10 @@ siteIsotype.styles = [
             color: var(--color-primary-contrast);
             --figure-size: 24.75em;
         }
-
+        .planet {
+            --color-shadow-1: #ff00000a;
+            --color-shadow-2: #8500ff00;
+        }
         .atom-content {
             width: 100%;
             height: 100%;
@@ -179,6 +194,8 @@ siteIsotype.styles = [
             height: 100%;
             border-radius: 100%;
             border: 2px solid var(--color-orbe);
+            border-bottom-color: var(--color-orbe-1);
+            border-left-color: var(--color-orbe-1);
         }
 
         @media (max-width: 768px) {

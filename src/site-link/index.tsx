@@ -1,6 +1,6 @@
-import { Props, c, css, useHost, useRef } from "atomico";
-import { tokens } from "../site-tokens";
 import { useParallax } from "@atomico/hooks/use-parallax";
+import { Props, c, css, useHost, useRef } from "atomico";
+import { tokensColor, tokensSize } from "../site-tokens";
 
 function siteLink({ href, target, dot }: Props<typeof siteLink>) {
     const refLink = useRef();
@@ -30,7 +30,8 @@ siteLink.props = {
 };
 
 siteLink.styles = [
-    tokens,
+    tokensSize,
+    tokensColor,
     css`
         :host {
             --padding: var(--size-2) 0px;

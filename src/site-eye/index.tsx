@@ -1,6 +1,6 @@
-import { c, css, useRef } from "atomico";
-import { tokens, tokensCard, tokensColor, tokensSize } from "../site-tokens";
 import { useParallax } from "@atomico/hooks/use-parallax";
+import { c, css, useRef } from "atomico";
+import { tokensColor } from "../site-tokens";
 
 function siteEye() {
     const refWindow = useRef(globalThis);

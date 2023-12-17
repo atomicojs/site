@@ -1,5 +1,4 @@
 import { Props, c, css } from "atomico";
-import { tokens } from "../site-tokens";
 
 function siteGradient({ x }: Props<typeof siteGradient>) {
     const currentX = x > 0.2 ? 0.18 : x < -0.4 ? -0.4 : x;
@@ -16,7 +15,6 @@ siteGradient.props = {
 };
 
 siteGradient.styles = [
-    tokens,
     css`
         :host {
             display: grid;

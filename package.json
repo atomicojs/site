@@ -9,24 +9,22 @@
     "scripts": {
         "start": "vite --force",
         "build": "vite build",
-        "test": "vitest",
-        "coverage": "vitest run --coverage",
         "pkg:types": "tsc",
-        "pkg:compile": "library \"src/**/*\" \"!src/{site,site-why}.tsx\"",
+        "pkg:compile": "library \"src/**/*\"",
         "pkg:exports": "exports \"lib/**/*\" \"types/**/*\" --wrappers --main components --centralize-wrappers",
         "prepublishOnly": "run pkg:* -s",
         "create": "scaff templates/component src"
     },
     "dependencies": {
         "@atomico/compare-content": "^1.2.3",
-        "@atomico/hooks": "*",
+        "@atomico/hooks": "^3.50.2",
         "@formkit/auto-animate": "^0.8.0",
         "atomico": "^1.74.0",
         "highlight.js": "^11.9.0",
         "scrollable-component": "^1.2.1"
     },
     "devDependencies": {
-        "@atomico/exports": "^1.11.1",
+        "@atomico/exports": "^1.12.0",
         "@atomico/postcss-tokens": "^3.4.5",
         "@atomico/run": "^0.12.0",
         "@atomico/scaffold": "latest",

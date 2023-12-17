@@ -11,40 +11,48 @@ function siteSocials({
     return (
         <host shadowDom>
             {!!twitter && (
-                <a
-                    href={`https://twitter.com/${twitter}`}
-                    class="link"
-                    target="_blank"
-                >
-                    <Twitter cloneNode />
-                </a>
+                <div class="item">
+                    <a
+                        href={`https://twitter.com/${twitter}`}
+                        class="link"
+                        target="_blank"
+                    >
+                        <Twitter cloneNode />
+                    </a>
+                </div>
             )}
             {!!github && (
-                <a
-                    class="link"
-                    href={`https://github.com/${github}`}
-                    target="_blank"
-                >
-                    <Github cloneNode />
-                </a>
+                <div class="item">
+                    <a
+                        class="link"
+                        href={`https://github.com/${github}`}
+                        target="_blank"
+                    >
+                        <Github cloneNode />
+                    </a>
+                </div>
             )}
             {!!discord && (
-                <a
-                    class="link"
-                    href={`https://discord.com/invite/${discord}`}
-                    target="_blank"
-                >
-                    <Discord cloneNode />
-                </a>
+                <div class="item">
+                    <a
+                        class="link"
+                        href={`https://discord.com/invite/${discord}`}
+                        target="_blank"
+                    >
+                        <Discord cloneNode />
+                    </a>
+                </div>
             )}
             {!!youtube && (
-                <a
-                    class="link"
-                    href={`https://www.youtube.com/${youtube}`}
-                    target="_blank"
-                >
-                    <Youtube cloneNode />
-                </a>
+                <div class="item">
+                    <a
+                        class="link"
+                        href={`https://www.youtube.com/${youtube}`}
+                        target="_blank"
+                    >
+                        <Youtube cloneNode />
+                    </a>
+                </div>
             )}
         </host>
     );
@@ -55,6 +63,7 @@ siteSocials.props = {
     github: String,
     discord: String,
     youtube: String,
+    narrow: { type: Boolean, reflect: true },
 };
 
 siteSocials.styles = [
@@ -64,19 +73,26 @@ siteSocials.styles = [
     css`
         :host {
             display: inline-flex;
+            flex-flow: row wrap;
             border-radius: 100px;
             border: var(--social-border);
-            padding: var(--social-space);
+            box-sizing: border-box;
             ---color-container: var(--color-link-social-container);
             ---color-invert: var(--color-link-social-invert);
+            --size: calc(var(--social-size) - var(--social-border-width) * 2);
         }
-        .link {
-            --size: calc(
-                var(--social-size) -
-                    (var(--social-space) + var(--social-border-width) * 2)
-            );
+        :host([narrow]) {
+            width: var(--social-size);
+        }
+        .item {
             width: var(--size);
             height: var(--size);
+            padding: var(--social-space);
+            box-sizing: border-box;
+        }
+        .link {
+            width: 100%;
+            height: 100%;
             display: flex;
             background: none;
             color: unset;

@@ -1,5 +1,5 @@
 import { Props, c, css } from "atomico";
-import { tokens } from "../site-tokens";
+import { tokensColor, tokensSize } from "../site-tokens";
 
 function siteCount({ value, color }: Props<typeof siteCount>) {
     return (
@@ -27,7 +27,8 @@ siteCount.props = {
 };
 
 siteCount.styles = [
-    tokens,
+    tokensSize,
+    tokensColor,
     css`
         :host {
             --size: var(--size-5);

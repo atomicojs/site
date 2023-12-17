@@ -1,7 +1,7 @@
 import { useSlot } from "@atomico/hooks/use-slot";
 import { Props, c, css, useRef } from "atomico";
-import { tokens } from "../site-tokens";
 import { serialize } from "atomico/utils";
+import { tokensCard, tokensColor } from "../site-tokens";
 function siteCard({ dotColor }: Props<typeof siteCard>) {
     const refMedia = useRef();
     const refContent = useRef();
@@ -35,7 +35,7 @@ function siteCard({ dotColor }: Props<typeof siteCard>) {
             <div class="footer">
                 <slot name="footer" ref={refFooter}></slot>
             </div>
-            <style>{`:host{--card-dot-bgcolor:${dotColor}}`}</style>
+            <style>{`:host{--dot-bgcolor:${dotColor}}`}</style>
         </host>
     );
 }
@@ -48,15 +48,16 @@ siteCard.props = {
 };
 
 siteCard.styles = [
-    tokens,
+    tokensColor,
+    tokensCard,
     css`
         :host {
             background: var(--color-card-container);
-            border: var(--card-border);
-            border-radius: var(--card-border-radius);
+            border: var(--border);
+            border-radius: var(--border-radius);
             position: relative;
             display: grid;
-            gap: var(--card-gap);
+            gap: var(--gap);
             backdrop-filter: blur(10px);
             --display-media: none;
             --display-content: none;
@@ -80,10 +81,10 @@ siteCard.styles = [
             --display-dot: block;
         }
         .dot {
-            width: var(--card-dot-size);
-            height: var(--card-dot-size);
-            background: var(--card-dot-bgcolor);
-            transition: var(--card-dot-transition);
+            width: var(--dot-size);
+            height: var(--dot-size);
+            background: var(--dot-bgcolor);
+            transition: var(--dot-transition);
             position: absolute;
         }
         .dot-circle {
@@ -98,10 +99,10 @@ siteCard.styles = [
             top: 0px;
             left: 0px;
             opacity: 0;
-            transition: var(--card-dot-transition) 0.25s;
+            transition: var(--dot-transition) 0.25s;
             background: radial-gradient(
                 circle at 100% -50%,
-                var(--card-dot-bgcolor),
+                var(--dot-bgcolor),
                 transparent
             );
         }
@@ -110,7 +111,7 @@ siteCard.styles = [
             opacity: 0.25;
         }
         :host([dot-color]:hover) .dot {
-            box-shadow: 0px 0px 42px var(--card-dot-bgcolor);
+            box-shadow: 0px 0px 42px var(--dot-bgcolor);
         }
         :host([overflow]) {
             overflow: hidden;
@@ -128,10 +129,8 @@ siteCard.styles = [
         .media {
             display: var(--display-media);
             overflow: hidden;
-            margin: var(--card-media-space);
-            border-radius: calc(
-                var(--card-border-radius) - var(--card-media-space)
-            );
+            margin: var(--media-space);
+            border-radius: calc(var(--border-radius) - var(--media-space));
             position: relative;
             margin-bottom: auto;
         }
@@ -145,16 +144,16 @@ siteCard.styles = [
         .content {
             display: var(--display-content);
             position: relative;
-            gap: var(--card-gap);
-            padding: var(--card-content-space);
+            gap: var(--gap);
+            padding: var(--content-space);
             margin: 0 0 auto;
         }
         .footer {
             display: var(--display-footer);
             justify-content: space-between;
             align-items: center;
-            border-top: var(--card-border);
-            padding: var(--card-footer-space);
+            border-top: var(--border);
+            padding: var(--footer-space);
             position: relative;
             margin-top: auto;
         }

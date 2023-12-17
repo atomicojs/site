@@ -12,6 +12,7 @@ import {
     SiteTitle,
     SiteSection,
     SiteRow,
+    SiteBigTitle,
 } from "../components";
 
 export const TemplateWeAre = () => (
