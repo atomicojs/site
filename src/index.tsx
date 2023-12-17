@@ -5,6 +5,7 @@ import { TemplateFooter } from "./templates/footer";
 import { TemplateHeader } from "./templates/header";
 import { TemplateIsotype } from "./templates/isotype";
 import { TemplateWeAre } from "./templates/we-are";
+import "@atomico/compare-content/style.css" assert { type: "css" };
 
 export default (
     <host>
