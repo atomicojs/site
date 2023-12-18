@@ -9,6 +9,7 @@
     "scripts": {
         "start": "vite --force",
         "build": "vite build",
+        "pkg:types": "tsc",
         "pkg:compile": "library \"src/**/*.{ts,tsx,css}\"",
         "pkg:exports": "exports \"lib/**/*\" \"types/**/*\" --wrappers --main components --centralize-wrappers",
         "prepublishOnly": "run pkg:* -s",
