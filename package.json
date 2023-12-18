@@ -10,20 +10,20 @@
         "start": "vite --force",
         "build": "vite build",
         "pkg:types": "tsc",
-        "pkg:compile": "library \"src/**/*\" --assets",
+        "pkg:compile": "library \"src/**/*.{ts,tsx,css}\"",
         "pkg:exports": "exports \"lib/**/*\" \"types/**/*\" --wrappers --main components --centralize-wrappers",
-        "prepublishOnly": "run pkg:* -s",
+        "prepublishOnly": "npm run pkg:types && npm run pkg:compile && npm run pkg:exports",
         "create": "scaff templates/component src"
     },
     "dependencies": {
         "@atomico/compare-content": "^1.2.3",
-        "@atomico/hooks": "^3.50.2",
+        "@atomico/hooks": "^3.50.3",
         "@formkit/auto-animate": "^0.8.0",
         "atomico": "^1.74.0",
         "scrollable-component": "^1.2.1"
     },
     "devDependencies": {
-        "@atomico/exports": "^1.12.0",
+        "@atomico/exports": "^1.13.0",
         "@atomico/postcss-tokens": "^3.4.5",
         "@atomico/run": "^0.12.0",
         "@atomico/scaffold": "latest",
