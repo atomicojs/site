@@ -12,7 +12,7 @@
         "pkg:types": "tsc",
         "pkg:compile": "library \"src/**/*.{ts,tsx,css}\"",
         "pkg:exports": "exports \"lib/**/*\" \"types/**/*\" --wrappers --main components --centralize-wrappers",
-        "prepublishOnly": "npm run pkg:types && npm run pkg:compile && npm run pkg:exports",
+        "prepublishOnly": "run pkg:* -s",
         "create": "scaff templates/component src"
     },
     "dependencies": {
