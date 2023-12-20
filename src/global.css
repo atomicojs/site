@@ -1,5 +1,3 @@
-@tokens "./site-tokens/tokens.yaml" scope(:root);
-
 html,
 body {
     width: 100%;
