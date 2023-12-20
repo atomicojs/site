@@ -19,7 +19,7 @@
         "@atomico/compare-content": "^1.2.3",
         "@atomico/hooks": "^4.0.0-beta.3",
         "@formkit/auto-animate": "^0.8.0",
-        "atomico": "^1.74.0",
+        "atomico": "^1.75.1",
         "scrollable-component": "^1.2.1"
     },
     "devDependencies": {
@@ -30,7 +30,7 @@
         "@atomico/tsconfig": "1.0.0",
         "@atomico/vite": "^2.16.0",
         "prismjs": "^1.29.0",
-        "typescript": "^4.7.4",
+        "typescript": "^5.3.3",
         "vite": "^5.0.7"
     },
     "prettier": {
