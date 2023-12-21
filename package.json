@@ -23,12 +23,12 @@
         "scrollable-component": "^1.2.1"
     },
     "devDependencies": {
-        "@atomico/exports": "^1.13.0",
+        "@atomico/exports": "^1.13.1",
         "@atomico/postcss-tokens": "^3.4.5",
         "@atomico/run": "^0.14.1",
         "@atomico/scaffold": "latest",
         "@atomico/tsconfig": "1.0.0",
-        "@atomico/vite": "^2.16.0",
+        "@atomico/vite": "^2.16.3",
         "prismjs": "^1.29.0",
         "typescript": "^5.3.3",
         "vite": "^5.0.7"
