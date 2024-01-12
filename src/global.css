@@ -7,5 +7,29 @@ body {
 }
 
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: "DM Sans", sans-serif;
+}
+
+* {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:not([class]) {
+    color: var(--color-link);
+    font-weight: var(--text-weight-medium);
+    text-underline-position: under;
+    text-decoration: var(--color-divide) wavy underline;
 }

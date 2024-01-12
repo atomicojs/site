@@ -33,7 +33,6 @@ siteCode.styles = [
             font-size: var(--font-size);
             line-height: var(--font-height);
         }
-
         code[class*="language-"] {
             text-shadow: none;
             font-family: Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono",
@@ -46,7 +45,6 @@ siteCode.styles = [
             line-height: 1.5;
             hyphens: none;
         }
-
         code[class*="language-"]::selection,
         code[class*="language-"] *::selection {
             text-shadow: none;

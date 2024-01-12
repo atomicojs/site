@@ -44,7 +44,6 @@ function graphDiff({ minimumTolerance, colorRange }: Props<typeof graphDiff>) {
         []
     );
 
-    console.log(totals);
 
     return (
         <host shadowDom>

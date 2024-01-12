@@ -17,7 +17,7 @@ function siteSocials({
                         class="link"
                         target="_blank"
                     >
-                        <Twitter cloneNode />
+                        {Twitter}
                     </a>
                 </div>
             )}
@@ -28,7 +28,7 @@ function siteSocials({
                         href={`https://github.com/${github}`}
                         target="_blank"
                     >
-                        <Github cloneNode />
+                        {Github}
                     </a>
                 </div>
             )}
@@ -39,7 +39,7 @@ function siteSocials({
                         href={`https://discord.com/invite/${discord}`}
                         target="_blank"
                     >
-                        <Discord cloneNode />
+                        {Discord}
                     </a>
                 </div>
             )}
@@ -50,7 +50,7 @@ function siteSocials({
                         href={`https://www.youtube.com/${youtube}`}
                         target="_blank"
                     >
-                        <Youtube cloneNode />
+                        {Youtube}
                     </a>
                 </div>
             )}

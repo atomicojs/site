@@ -64,8 +64,8 @@ text:
     size:
         =: $size-4
         title:
-            1: "clamp($size-6 , 5vw , $size-8)"
-            2: "clamp($size-5 , 5vw , $size-7)"
+            1: "clamp($size-7 , 5vw , $size-8)"
+            2: "clamp($size-6 , 4vw , $size-8)"
             3: "clamp($size-4 , 5vw , $size-6)"
             4: "clamp($size-3 , 5vw , $size-5)"
             5: "clamp($size-2 , 5vw , $size-4)"

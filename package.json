@@ -28,10 +28,10 @@
         "@atomico/run": "^0.14.1",
         "@atomico/scaffold": "latest",
         "@atomico/tsconfig": "1.0.0",
-        "@atomico/vite": "^2.16.3",
+        "@atomico/vite": "^2.17.8",
         "prismjs": "^1.29.0",
         "typescript": "^5.3.3",
-        "vite": "^5.0.7"
+        "vite": "^5.0.10"
     },
     "prettier": {
         "tabWidth": 4,
