@@ -19,8 +19,7 @@
         "@atomico/compare-content": "^1.2.3",
         "@atomico/hooks": "^4.0.0-beta.3",
         "@formkit/auto-animate": "^0.8.0",
-        "atomico": "^1.75.1",
-        "scrollable-component": "^1.2.1"
+        "atomico": "^1.75.1"
     },
     "devDependencies": {
         "@atomico/exports": "^1.13.1",

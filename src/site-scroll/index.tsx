@@ -1,6 +1,5 @@
 import { c, css } from "atomico";
 import { tokensScroll } from "../site-tokens";
-import { ScrollableComponentElement } from "scrollable-component";
 
 function siteScroll() {
     return <host></host>;
@@ -11,9 +10,9 @@ siteScroll.styles = [
     css`
         :host {
             width: 100%;
-            --scrollbar-width: var(--width);
+            overflow: auto;
         }
     `,
 ];
 
-export const SiteScroll = c(siteScroll, ScrollableComponentElement);
+export const SiteScroll = c(siteScroll);
