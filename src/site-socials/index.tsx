@@ -106,8 +106,8 @@ siteSocials.styles = [
             cursor: pointer;
         }
         .link svg {
-            width: 50%;
-            height: 50%;
+            width: 0.875rem;
+            height: 0.875rem;
         }
         .link svg * {
             fill: currentColor;
