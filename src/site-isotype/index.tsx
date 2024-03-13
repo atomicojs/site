@@ -59,7 +59,9 @@ function siteIsotype() {
                     }}
                     class="atom atom-1 atom-inner-shadow"
                 >
-                    {!isAndroid && <SitePlanet class="planet" />}
+                    {isAndroid != null && !isAndroid && (
+                        <SitePlanet class="planet" />
+                    )}
                 </div>
                 <div
                     ref={(ref) => {
@@ -69,7 +71,7 @@ function siteIsotype() {
                     }}
                     class="atom atom-2 atom-inner-shadow"
                 >
-                    {!isAndroid && (
+                    {isAndroid != null && !isAndroid && (
                         <SitePlanet class="planet" style="--duration: 60s" />
                     )}
                 </div>
@@ -81,7 +83,7 @@ function siteIsotype() {
                     }}
                     class="atom atom-3 atom-inner-shadow"
                 >
-                    {!isAndroid && (
+                    {isAndroid != null && !isAndroid && (
                         <SitePlanet
                             class="planet"
                             reverse
