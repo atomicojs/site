@@ -1,13 +1,22 @@
 import { useParallax } from "@atomico/hooks/use-parallax";
-import { c, css, useRef } from "atomico";
+import { c, css, useMemo, useRef, options, UseMemo } from "atomico";
 import { SitePlanet } from "../site-planet";
 import { tokensColor, tokensSize } from "../site-tokens";
 
-const isAndroid = navigator.userAgent.toLowerCase().includes("android");
+const useClient: UseMemo = (callback, args) =>
+    useMemo(() => {
+        if (options.ssr) return;
+        return callback();
+    }, args);
 
 function siteIsotype() {
     const host = useRef(globalThis);
     const state = useParallax(host);
+    const isAndroid = useClient(
+        () => navigator.userAgent.toLowerCase().includes("android"),
+        []
+    );
+
     return (
         <host shadowDom>
             <div class="atom-orbe" style="--orbe-size: 1.5; opacity:.5">
