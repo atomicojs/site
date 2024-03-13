@@ -3,6 +3,8 @@ import { c, css, useRef } from "atomico";
 import { SitePlanet } from "../site-planet";
 import { tokensColor, tokensSize } from "../site-tokens";
 
+const isAndroid = navigator.userAgent.toLowerCase().includes("android");
+
 function siteIsotype() {
     const host = useRef(globalThis);
     const state = useParallax(host);
@@ -48,7 +50,7 @@ function siteIsotype() {
                     }}
                     class="atom atom-1 atom-inner-shadow"
                 >
-                    <SitePlanet class="planet" />
+                    {!isAndroid && <SitePlanet class="planet" />}
                 </div>
                 <div
                     ref={(ref) => {
@@ -58,7 +60,9 @@ function siteIsotype() {
                     }}
                     class="atom atom-2 atom-inner-shadow"
                 >
-                    <SitePlanet class="planet" style="--duration: 60s" />
+                    {!isAndroid && (
+                        <SitePlanet class="planet" style="--duration: 60s" />
+                    )}
                 </div>
                 <div
                     ref={(ref) => {
@@ -68,12 +72,14 @@ function siteIsotype() {
                     }}
                     class="atom atom-3 atom-inner-shadow"
                 >
-                    <SitePlanet
-                        class="planet"
-                        reverse
-                        y
-                        style="--duration: 30s"
-                    />
+                    {!isAndroid && (
+                        <SitePlanet
+                            class="planet"
+                            reverse
+                            y
+                            style="--duration: 30s"
+                        />
+                    )}
                 </div>
             </div>
             <div class="atom-content">
